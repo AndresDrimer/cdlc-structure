@@ -8,13 +8,13 @@ export default async function Home() {
   return (
     <main> 
       <h1>hola</h1>
-      {/*<img src="https://drive.google.com/uc?export=view&id=17S09rRqBexUp2rWRpIQk6CBjRdKyCEwV"></img>
-  */}
+      {/*<img src="https://drive.google.com/uc?export=view&id=17S09rRqBexUp2rWRpIQk6CBjRdKyCEwV"></img>*/}
+  
      <pre>{products[1].imgBack}</pre>
-     
+
      <Row products={products}/>
      <pre>{products.map(it=>(
-        <p key={it._id}>{it.title}</p>)
+        <p key={it._id}>{it.title}{it.author}</p>)
         )}</pre>
     </main>
   )
