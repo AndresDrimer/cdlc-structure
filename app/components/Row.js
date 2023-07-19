@@ -36,7 +36,7 @@ const Row = ({ products }) => {
           ref={rowRef}
         >
           {products.map((product) => (
-            <Thumbnail product={product} />
+            <Thumbnail key={product._id} product={product} />
           ))}
         </div>
 
