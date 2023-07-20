@@ -21,7 +21,7 @@ const Row = ({ products }) => {
 
   return (
     <div className="space-y-0.5 md:space-y-2">
-      <h2 className="w-56 mt-6 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white md:text-2xl">
+      <h2 className="w-56 mt-6 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-black md:text-2xl">
         title
       </h2>
 
@@ -35,7 +35,7 @@ const Row = ({ products }) => {
           className="flex items-center space-x-0.5 scrollbar-hide overflow-x-scroll md:space-x-2.5 md:p-2"
           ref={rowRef}
         >
-          {products.map((product) => (
+          {products.map((product) => (product.imgFront &&
             <Thumbnail key={product._id} product={product} />
           ))}
         </div>

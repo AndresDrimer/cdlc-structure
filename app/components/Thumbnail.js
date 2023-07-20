@@ -10,14 +10,13 @@ const comoViene ="https://drive.google.com/file/d/17S09rRqBexUp2rWRpIQk6CBjRdKyC
 
   return (
     <Link
-      href={`/`}
-      className={`relative h-28 min-w-[180px] cursor-pointer transition duration-200 ease-out md:h-36 md:min-w-[260px] md:hover:scale-105`}
+      href={`/${product._id}`}
+      className={`relative h-70 min-w-[180px] cursor-pointer transition duration-200 ease-out md:h-70 md:min-w-[260px] md:hover:scale-105`}
     >
-    
       <img
-      src="https://drive.google.com/uc?export=view&id=17S09rRqBexUp2rWRpIQk6CBjRdKyCEwV"
+      src={product.imgFront}
         className="rounded-sm object-cover md:rounded"
-        fill
+        
         alt="movie poster"
     />
     </Link>
