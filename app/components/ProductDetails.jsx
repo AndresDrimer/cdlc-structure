@@ -2,47 +2,43 @@ import React from "react";
 import ImageCollage from "./ImageCollage";
 import Link from "next/link";
 import urlStoreIntl from "../../constants/constant";
+import Image from "next/image";
+import Carrousel from "./Carrousel";
+import TechSpecs from "./TechSpecs";
 
 function ProductDetail({ product }) {
-  
   return (
     <section className="p-4">
-      {/*contenedor de imagens y titulos*/}
-      <div className="flex">
-        <ImageCollage product={product} />
+      {/*contenedor de imagenes y titulos*/}
 
-        <div className="flex-1 mx-4">
-          <h1 className="text-bold text-3xl uppercase">{product.title}</h1>
-          <h1 className="text-md w-3/4">de {product.author}</h1>
+      {/*small devices*/}
+      <div className="block md:hidden">
+        <Carrousel product={product} />
+        <TechSpecs product={product} />
+      </div>
 
-          {/*ficha tecnica */}
-          <div className="my-6 w-3/4">
-            {" "}
-            <p className="text-xs">{product.techSpecs}</p>
+      {/*medium devices and above*/}
+      <div className="hidden md:block">
+        <div className="flex mx-auto">
+          <div className="hidden md:inline-block w-3/5">
+            <ImageCollage product={product} />
           </div>
-
-          {/* boton de link a TiendaNube para comprar*/}
-          <a
-            href={product.ProdUrl ? product.ProdUrl : urlStoreIntl}
-            target="_blank"
-          >
-            <button className="button">comprar</button>
-          </a>
+          <TechSpecs product={product} />
         </div>
       </div>
 
       {/*Descripcion detallada, comentarios*/}
-      <div className="space-y-4">
+      <div className="space-y-6 mx-4 mt-4 ">
         <div>
           <p className="text-sm font-bold">Reseña</p>
-          <p className="text-sm">{product.review}</p>
+          <p className="text-sm leading-loose">{product.review}</p>
         </div>
         <div>
           <p className="text-sm font-bold">Sobre autor(a)</p>
-          <p className="text-xs">{product.authorSpecs}</p>
+          <p className="text-xs leading-relaxed">{product.authorSpecs}</p>
         </div>
       </div>
-      {/* Otros libros de la misma colección */}
+
     </section>
   );
 }
