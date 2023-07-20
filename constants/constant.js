@@ -1,0 +1,1 @@
+export const urlStoreIntl = "https://cafedelasciudades.mitiendanube.com/"

@@ -1,12 +1,8 @@
-import Image from "next/image";
+
 import Link from "next/link";
 
 
 const Thumbnail = ({ product }) => {
-const updatedImgUrlFront = product.updatedImgUrlFront
-
-const formatoComoSiAnda = "https://drive.google.com/uc?export=view&id=17S09rRqBexUp2rWRpIQk6CBjRdKyCEwV"
-const comoViene ="https://drive.google.com/file/d/17S09rRqBexUp2rWRpIQk6CBjRdKyCEwV/view?usp=sharing"
 
   return (
     <Link

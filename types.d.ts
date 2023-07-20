@@ -6,6 +6,10 @@ interface Product {
     colorCode: string | undefined
     title: string
     author: string | undefined
+    ProdUrl: string	
+    techSpecs: string | undefined	
+    authorSpecs: string | undefined	
+    review: string | undefined
     deprecated: boolean
     show: boolean
     digital: boolean

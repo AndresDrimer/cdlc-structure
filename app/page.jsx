@@ -10,6 +10,9 @@ export default async function Home() {
   return (
     <main>
       <h1 className="text-center">Página estática para usuario Anónimo</h1>
+      {/*Buscador por titulo con filtro, dirige a prod por Id, FORM con server action */}
+
+
 
       {/*Row de Productos destacados */}
       <Row products={highlightedProducts} title="lanzamientos y destacados" />
