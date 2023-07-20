@@ -16,8 +16,7 @@ const comoViene ="https://drive.google.com/file/d/17S09rRqBexUp2rWRpIQk6CBjRdKyC
       <img
       src={product.imgFront}
         className="rounded-sm object-cover md:rounded"
-        
-        alt="movie poster"
+        alt="imagen de tapa"
     />
     </Link>
   );

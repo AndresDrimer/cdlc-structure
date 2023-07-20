@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Thumbnail from "./Thumbnail";
 
-const Row = ({ products }) => {
+const Row = ({ products, title }) => {
   const rowRef = useRef(null);
 
   const handleClick = (direction) => {
@@ -20,9 +20,9 @@ const Row = ({ products }) => {
   };
 
   return (
-    <div className="space-y-0.5 md:space-y-2">
-      <h2 className="w-56 mt-6 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-black md:text-2xl">
-        title
+    <div className="space-y-0.5 md:space-y-2 mx-2 ">
+      <h2 className="w-full mt-6 cursor-pointer text-sm font-semibold text-gray-200 transition duration-200 hover:text-gray-500 md:text-2xl">
+        {title}
       </h2>
 
       <div className="group relative md:ml-2">
