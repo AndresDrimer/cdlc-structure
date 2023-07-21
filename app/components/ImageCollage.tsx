@@ -25,7 +25,7 @@ function ImageCollage({ product }: { product: Product }) {
           <img
             src={imgChosen}
             alt=""
-            className="hover:scale-[1.75] hover:cursor-zoom-in touch-auto transition duration-300"
+            className="hover:scale-[1.5] hover:cursor-zoom-in touch-auto transition duration-300"
           />
         </div>
       </div>
