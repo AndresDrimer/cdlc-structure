@@ -5,7 +5,7 @@ function ImageCollage({ product }: { product: Product }) {
   const imgSrc = product.imgFront ? product.imgFront : product.imgBack;
   const [imgChosen, setImgChosen] = useState(imgSrc);
   return (
-    <div className="flex-1">
+    <div className="flex-1 mt-4">
       <div className="flex">
         <div className="w-1/3">
           <img
@@ -25,7 +25,7 @@ function ImageCollage({ product }: { product: Product }) {
           <img
             src={imgChosen}
             alt=""
-            className="hover:scale-[1.5] hover:cursor-zoom-in touch-auto transition duration-300"
+            className="hover:scale-[1.5] hover:cursor-zoom-in touch-auto transition duration-500"
           />
         </div>
       </div>

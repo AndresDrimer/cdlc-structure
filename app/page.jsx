@@ -8,10 +8,10 @@ export default async function Home() {
   const { highlightedProducts } = await getHighlightedProducts();
  
   return (
-    <main>
-      <h1 className="text-center">Página estática para usuario Anónimo</h1>
+    <main className="">
+      <h1 className="text-center underline decoration-pink-500 text-xs">Página estática para usuario Anónimo</h1>
       {/*Buscador por titulo con filtro, dirige a prod por Id, FORM con server action */}
-
+    
 
 
       {/*Row de Productos destacados */}

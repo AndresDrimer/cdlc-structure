@@ -1,4 +1,3 @@
-import React from "react";
 import ImageCollage from "./ImageCollage";
 import Link from "next/link";
 import urlStoreIntl from "../../constants/constant";
@@ -28,17 +27,22 @@ function ProductDetail({ product }) {
       </div>
 
       {/*Descripcion detallada, comentarios*/}
-      <div className="space-y-6 mx-4 mt-4 ">
-        <div>
+      <div className="space-y-6 mx-4 mt-4 w-1/2">
+        <div className="">
+        <div className="my-8">
+      <p className="text-xs text-gray-500">{product.techSpecs}</p>
+    </div>
+
           <p className="text-sm font-bold">Reseña</p>
-          <p className="text-sm leading-loose">{product.review}</p>
+          <p className="text-sm leading-smooth">{product.review}</p>
         </div>
         <div>
-          <p className="text-sm font-bold">Sobre autor(a)</p>
-          <p className="text-xs leading-relaxed">{product.authorSpecs}</p>
+          <p className="text-sm font-bold ">Sobre autor(a)</p>
+          <p className="text-xs leading-smooth">{product.authorSpecs}</p>
         </div>
       </div>
 
+      
     </section>
   );
 }

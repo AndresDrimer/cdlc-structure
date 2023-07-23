@@ -5,11 +5,14 @@ function TechSpecs({product}: {product: Product}) {
     
   return (
     <div className="flex-1 mx-4">
-   
-    <h1 className="text-bold text-4xl uppercase">{product.title}</h1>
+        <div className=''>
+        <p className='text-xs text-right'>colección "nombre_de_colección"</p>
+        <hr />
+    </div>
+    <h1 className="text-bold text-4xl uppercase mt-2">{product.title}</h1>
     
     { product.author &&
-    <h1 className="text-md w-3/4">de {product.author}</h1>
+    <h1 className="text-sm w-3/4">de {product.author}</h1>
     }
 
     {!product.author && product.contains &&
@@ -18,12 +21,9 @@ function TechSpecs({product}: {product: Product}) {
 
 
     {/*ficha tecnica */}
-    <div className="my-6 w-3/4">
-      <p className="text-xs">{product.techSpecs}</p>
-    </div>
-
+   
     {/* boton de link a TiendaNube para comprar*/}
-    <div className="">
+    <div className="mt-8">
     <a
       href={product.ProdUrl ? product.ProdUrl : urlStoreIntl}
       target="_blank"

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+    body {
+    @apply h-screen flex flex-col justify-between
+}}
+
+
 @layer components {
     .button {
     @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 my-2 px-4 rounded

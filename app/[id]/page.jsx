@@ -1,11 +1,12 @@
-import { getProductById } from "@/lib/mongo/products";
+import { getProductById, getSameGenre } from "@/lib/mongo/products";
 import ProductDetails from "../components/ProductDetails";
 import { IoChevronBackOutline } from "react-icons/io5";
 import Link from "next/link";
 import Row from "../components/Row";
 
 export default async function detailById({ params }) {
-  const product = await getProductById(params.id);
+  const {product} = await getProductById(params.id);
+  const {sameGenreProducts} = await getSameGenre(product.genre, product._id)
 
   return (
     <div>
@@ -17,10 +18,10 @@ export default async function detailById({ params }) {
         </button>
       </Link>
 
-      <ProductDetails product={product.product} />
+      <ProductDetails product={product} />
 
             {/* Otros libros de la misma colección */}
-            
+          <Row products={sameGenreProducts} title="otros libros vinculados" />
     </div>
   );
 }
