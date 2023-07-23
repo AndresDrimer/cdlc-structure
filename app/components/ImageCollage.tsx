@@ -21,11 +21,11 @@ function ImageCollage({ product }: { product: Product }) {
             className="cursor-pointer"
           />
         </div>
-        <div className="w-2/3 overflow-scroll">
+        <div className="w-2/3 overflow-scroll scrollbar-hide">
           <img
             src={imgChosen}
             alt=""
-            className="hover:scale-[1.5] hover:cursor-zoom-in touch-auto transition duration-500"
+            className="hover:scale-[1.2] hover:cursor-zoom-in touch-auto transition ease-in duration-300"
           />
         </div>
       </div>

@@ -24,8 +24,16 @@ const url2 = `https://docs.google.com/viewer?embedded=true&url=${URL_PDF}`
 
     const id = params.id
 return (
-    <div>{id}
-       <iframe src={url2} className="w-full h-screen"></iframe>
+    <div><p className="text-right">params.id: {id}</p>
+<div className="mx-auto w-4/5" >
+{/*<iframe src="https://drive.google.com/file/d/1geMH-ti5UhvOgVQeQMvlEArPWte_V4Ac/preview" width="640" height="480" allow="autoplay"></iframe>*/}
+
+
+<iframe src="https://drive.google.com/file/d/1OxyfwxI0BA3fGarIqjN3ELFSeALP55li/preview" height="980" width="100%"  allow="autoplay"></iframe>
+</div>
+      {/* <iframe src={url2} className="w-full h-screen"></iframe>*/}
+
+
        
         
         </div>

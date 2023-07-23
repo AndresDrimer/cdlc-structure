@@ -13,15 +13,15 @@ function Footer() {
     <footer className="text-xs">
       <div className="flex w-full justify-center items-center shadow-2xl shadow-black">
         <div className=" w-1/2 flex justify-end">
-          <Image src={Logo} width={100} height={100} alt="logo"/>
+          <Image src={Logo} width={80} height={80} alt="logo"/>
         </div>
         
-        <div className="w-1/2">
+        <div className="w-2/3 hd:w-1/2">
            <div> <a href={urlCdlcRevista} target="_blank" className="cursor-pointer"><p className="hover:font-bold">Revista CdlC - {`${since} años!`}</p></a></div>
           <div className="flex space-x-2"><BsTelephone /><p>+549 116.493.0517</p></div>
-          <div className="flex space-x-2"><CiMail /><p>librerias@cafedelasciudades.com.ar</p></div>
+          <div className="flex space-x-2"><CiMail /><p className="break-all">librerias@cafedelasciudades.com.ar</p></div>
 
-         <div className="flex space-x-2"><BiHomeAlt2 /> <p>Godoy Cruz 1653 / La Ciudad Posible <span className="font-semibold">(sólo con cita previa)</span></p></div>
+         <div className="flex space-x-2"><BiHomeAlt2 /> <p className="break-inside-auto">Godoy Cruz 1653 / La Ciudad Posible <span className="font-semibold">(sólo con cita previa)</span></p></div>
         </div>
       </div>
     </footer>

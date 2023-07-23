@@ -20,7 +20,7 @@ const Row = ({ products, title }) => {
   };
 
   return (
-    <div className="space-y-0.5 md:space-y-2 mx-2 ">
+    <div className="space-y-0.5 md:space-y-2 mx-2 w-full">
       <h2 className="w-full mt-6 cursor-pointer text-sm font-semibold text-gray-200 transition duration-200 hover:text-gray-500 md:text-2xl">
         {title}
       </h2>
