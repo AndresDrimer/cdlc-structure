@@ -6,7 +6,7 @@ function TechSpecs({product}: {product: Product}) {
   return (
     <div className="flex-1 mx-4">
         <div className=''>
-        <p className='text-xs text-right'>colección "nombre_de_colección"</p>
+        <p className='text-xs text-right'>colección nombre_de_colección</p>
         <hr />
     </div>
     <h1 className="text-bold text-4xl uppercase mt-2">{product.title}</h1>
