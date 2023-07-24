@@ -55,3 +55,12 @@ Step 4: Add permission to the document
 
 Use the permissions.create method to add a permission for the document.
 Specify the document ID and provide the details of the permission, such as type, role, and email address.
+
+
+        "gris": "#b3b1b2",
+      "rojo": "#e40613",
+      "ciudades": "#23afb2",
+      "habitat": "#c33432",
+      "movilidad": "#d8aa06",
+      "territorio": "#ce050b",
+      "urbanidad": "#a8301f",

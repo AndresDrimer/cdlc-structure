@@ -1,5 +1,7 @@
 
+import Image from "next/image";
 import Link from "next/link";
+import ProductDetail from "./ProductDetails";
 
 
 const Thumbnail = ({ product }) => {
@@ -11,10 +13,11 @@ const Thumbnail = ({ product }) => {
     >
       <img
       src={product.imgFront}
-        className="rounded-sm object-cover md:rounded"
+        className="rounded-sm object-cover md:rounded relative"
         alt="imagen de tapa"
     />
-    </Link>
+
+    {product.discountPercentage !==0 && (<div className="font-xs px-2 bg-gris text-rojo absolute top-0 right-0 shadow-sm">  {product.discountPercentage}% off </div>) }  </Link>
   );
 };
 
