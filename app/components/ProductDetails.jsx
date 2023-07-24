@@ -27,7 +27,7 @@ function ProductDetail({ product }) {
       </div>
 
       {/*Descripcion detallada, comentarios*/}
-      <div className="space-y-6 mx-4 mt-4 w-1/2">
+      <div className="space-y-6 ml-4 mt-4 mr-6">
         <div className="">
         <div className="my-8">
       <p className="text-xs text-gray-500">{product.techSpecs}</p>

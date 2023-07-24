@@ -8,7 +8,7 @@ export default async function Home() {
   const { highlightedProducts } = await getHighlightedProducts();
  
   return (
-    <main className="">
+    <main className="flex-1 flex flex-col justify-between">
       <h1 className="text-center underline decoration-pink-500 text-xs">Página estática para usuario Anónimo</h1>
       {/*Buscador por titulo con filtro, dirige a prod por Id, FORM con server action */}
     

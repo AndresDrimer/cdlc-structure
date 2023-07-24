@@ -8,9 +8,10 @@ export default async function detailById({ params }) {
   const {product} = await getProductById(params.id);
   const {sameGenreProducts} = await getSameGenre(product.genre, product._id)
 
+
   return (
     <div>
-
+{console.log(sameGenreProducts)}
       <Link href="/">
         <button className="flex items-center ml-4 text-sm cursor-pointer text-gray-500 hover:text-black">
           <IoChevronBackOutline className="inline" />
@@ -21,7 +22,7 @@ export default async function detailById({ params }) {
       <ProductDetails product={product} />
 
             {/* Otros libros de la misma colección */}
-          <Row products={sameGenreProducts} title="otros libros vinculados" />
+          <Row products={sameGenreProducts} title="en esta colección: " />
     </div>
   );
 }

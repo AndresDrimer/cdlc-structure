@@ -2,11 +2,11 @@ interface Product {
     _id: string
     codeDUX: string | undefined
     ISBN: string | undefined
-    genre: string | undefined
-    colorCode: string | undefined
+    genre: "urbanidad" | "hábitat" | "ciudades" | "movilidad" | "territorio" | "no-genre" | "combo" | "coleccion"
     title: string
     author: string | undefined
-    ProdUrl: string	
+    urlIntl: string | undefined
+    urlLocal: string | undefined
     techSpecs: string | undefined	
     authorSpecs: string | undefined	
     review: string | undefined
@@ -29,3 +29,5 @@ interface Product {
     imgFront: string | undefined 
     imgBack: string | undefined
 }
+
+
