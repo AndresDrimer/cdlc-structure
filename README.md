@@ -1,3 +1,19 @@
+TODO FEATURES
+anonymous:
+search autocomplete (title and author)
+collections and combos: special logic to show products contained and their content
+
+user:
+auth, users db
+my books
+
+admin:
+auth
+crud products - new layout
+
+--------
+
+USEFULL LINKS DURING PROCESS
 https://www.npmjs.com/package/google-spreadsheet  sobre google-spreadsheet
 
 setup de la Api de Google en Node: https://developers.google.com/docs/api/quickstart/nodejs
@@ -57,10 +73,20 @@ Use the permissions.create method to add a permission for the document.
 Specify the document ID and provide the details of the permission, such as type, role, and email address.
 
 
-        "gris": "#b3b1b2",
+      "gris": "#b3b1b2",
       "rojo": "#e40613",
       "ciudades": "#23afb2",
       "habitat": "#c33432",
       "movilidad": "#d8aa06",
       "territorio": "#ce050b",
       "urbanidad": "#a8301f",
+
+      coleccion ciudades - NO, esto son digitales
+      La Ciudad Posible= cc620
+      Ciudades vividas, = CC023
+      Luces y sombras del urbanismo en Barcelona, =CC003
+      Ciudad, Comercio y Consumo 1, 
+      Ciudad, Comercio y Consumo 2, 
+      Circuitos de la economía urbana, 
+      La Ciudad Patrimonial 
+

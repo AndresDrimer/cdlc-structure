@@ -2,11 +2,12 @@ interface Product {
     _id: string
     codeDUX: string | undefined
     ISBN: string | undefined
-    genre: "urbanidad" | "hábitat" | "ciudades" | "movilidad" | "territorio" | "no-genre" | "combo" | "coleccion"
+    genre: "urbanidad" | "hábitat" | "ciudades" | "movilidad" | "territorio" | "no-genre" | "combo" | "coleccion" | "planeamiento" | "cultura" | "barrios" | "ensayos"
     title: string
     author: string | undefined
     urlIntl: string | undefined
     urlLocal: string | undefined
+    colorCode: string | undefined
     techSpecs: string | undefined	
     authorSpecs: string | undefined	
     review: string | undefined
@@ -16,6 +17,7 @@ interface Product {
     combo: boolean
     highlighted: boolean
     new: boolean
+    containsDUXCode: string | undefined
     contains: string | undefined
     stock: number | null
     discountPercentage: number | null
@@ -29,5 +31,7 @@ interface Product {
     imgFront: string | undefined 
     imgBack: string | undefined
 }
+
+
 
 

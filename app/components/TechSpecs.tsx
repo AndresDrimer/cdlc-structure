@@ -9,10 +9,10 @@ function TechSpecs({product}: {product: Product}) {
         <p className='text-xs text-right'>colección <span className='uppercase'>{product.genre}</span></p>
         <hr className='border-gris'/>
     </div>
-    <h1 className="text-bold text-4xl uppercase mt-2 w-3/4">{product.title}</h1>
+    <h1 className="text-bold  text-3xl sm:text-4xl uppercase mt-2 w-3/4">{product.title}</h1>
     
     { product.author &&
-    <h1 className="text-sm w-3/4">de {product.author}</h1>
+    <h1 className="text-sm w-3/4 mt-2">de {product.author}</h1>
     }
 
     {!product.author && product.contains &&

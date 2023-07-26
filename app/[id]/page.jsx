@@ -7,22 +7,22 @@ import Row from "../components/Row";
 export default async function detailById({ params }) {
   const {product} = await getProductById(params.id);
   const {sameGenreProducts} = await getSameGenre(product.genre, product._id)
-console.log(product._id)
+
 
   return (
-    <div>
-
+    <div className="">
+<div className="mt-8">
       <Link href="/">
         <button className="flex items-center ml-4 text-sm cursor-pointer text-gray-500 hover:text-black">
           <IoChevronBackOutline className="inline" />
           back
         </button>
       </Link>
-
+</div>
       <ProductDetails product={product} />
 
             {/* Otros libros de la misma colección */}
-          <Row products={sameGenreProducts} title="otros libros de esta colección: " />
+          <Row products={sameGenreProducts} title="recomendados " />
     </div>
   );
 }

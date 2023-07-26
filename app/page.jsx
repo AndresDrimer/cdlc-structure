@@ -12,13 +12,14 @@ export default async function Home() {
       <h1 className="text-center underline decoration-pink-500 text-xs">Página estática para usuario Anónimo</h1>
       {/*Buscador por titulo con filtro, dirige a prod por Id, FORM con server action */}
     
-
+  {/* Row de TODOS los productos*/}
+  {/* este tiene que tener un selector para mostrar digitales (preset) o fisicos */}
+      <Row products={products} title="catálogo completo" />
 
       {/*Row de Productos destacados */}
       <Row products={highlightedProducts} title="lanzamientos y destacados" />
 
-      {/* Row de TODOS los productos*/}
-      <Row products={products} title="catálogo completo" />
+    
     </main>
   );
 }
