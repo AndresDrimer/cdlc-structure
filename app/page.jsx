@@ -1,12 +1,13 @@
 import Row from "./components/Row";
 import Toggler from "./components/Toggler"
-import { getAllProducts, getHighlightedProducts } from "../lib/mongo/products";
+import { getAllProducts, getAllProductsCleaned, getHighlightedProducts } from "../lib/mongo/products";
 import SearchBar from "./components/SearchBar";
 
 export const dynamic = "auto"; //content is all cached as much as possible
 
 export default async function Home() {
-  const { products } = await getAllProducts();
+  // const { products } = await getAllProducts();
+  const { products } = await getAllProductsCleaned();
   const { highlightedProducts } = await getHighlightedProducts();
  
   return (
@@ -30,7 +31,7 @@ export default async function Home() {
       <Row products={products} title="catálogo" />
 
       {/*Row de Productos destacados */}
-      <Row products={highlightedProducts} title="destacados"  />
+      <Row products={highlightedProducts} title="colecciones"  />
 
     
     </main>

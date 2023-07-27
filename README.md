@@ -93,3 +93,50 @@ Specify the document ID and provide the details of the permission, such as type,
       La Ciudad Patrimonial 
 
 Deberian poder ordenarse por fecha de publicacion, ese dato falta en la tabla!
+
+///////////////////////////
+
+Idea para encontrar localizacion por pais (sirve solo sobre Vercel, pero para nosotros va!)
+Using the Geo from NextRequest#
+If you're deploying in Vercel, it's incredibly easy and accurate to get the country of the user. Inside NextJS middleware.ts, there's a built-in geo property from the NextRequest class that we can access to get the user's country:
+
+// middleware.ts
+import { NextRequest, NextFetchEvent, NextResponse } from "next/server";
+const RESTRICTED_COUNTRIES = ["PH", "US"]
+export async function middleware(request: NextRequest, _next: NextFetchEvent) {
+  const res = NextResponse.next();
+  const country = request.geo?.country ?? ""
+  if(RESTRICTED_COUNTRIES.includes(country)){
+    return NextResponse.rewrite(new URL("/restricted", request.url))
+  }
+  return res;
+}
+
+//esta es otra manera, por si esa no funciona:
+If you're not deploying in Vercel and not using a CDN proxy, you can use a 3rd-Party IP service to get the country. There are many available services such as ipstack.com, ipapi.co, ipwhois.io, and many more.
+
+This is the slowest way of getting the user country due to the extra API call, but it's more reliable than using headers (2nd option). You have to choose whether you prioritize speed or reliability.
+
+In this example, we'll use ipapi.co:
+
+import { NextRequest, NextFetchEvent, NextResponse } from "next/server";
+const RESTRICTED_COUNTRIES = ["PH", "US"];
+export async function middleware(request: NextRequest, _next: NextFetchEvent) {
+  const res = NextResponse.next();
+  const country = request.cookies.get("country")?.value ?? "";
+  //get the ip address depending on your hosting provider.
+  const ip = request.ip;
+  if (!country) {
+    try {
+      const response = await fetch(`https://ipapi.co/${ip}/country/`);
+      const country = await response.text();
+      if (country) {
+        res.cookies.set("country", country);
+      }
+    } catch (error) {}
+  }
+  if (RESTRICTED_COUNTRIES.includes(country)) {
+    return NextResponse.rewrite(new URL("/restricted", request.url));
+  }
+  return res;
+}

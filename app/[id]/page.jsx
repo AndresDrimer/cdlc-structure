@@ -3,6 +3,7 @@ import ProductDetails from "../components/ProductDetails";
 import { IoChevronBackOutline } from "react-icons/io5";
 import Link from "next/link";
 import Row from "../components/Row";
+import Toggler from "../components/Toggler";
 
 export default async function detailById({ params }) {
   const {product} = await getProductById(params.id);
@@ -19,6 +20,7 @@ export default async function detailById({ params }) {
         </button>
       </Link>
 </div>
+<Toggler />
       <ProductDetails product={product} />
 
             {/* Otros libros de la misma colección */}
