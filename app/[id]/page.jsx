@@ -22,7 +22,7 @@ export default async function detailById({ params }) {
       <ProductDetails product={product} />
 
             {/* Otros libros de la misma colección */}
-          <Row products={sameGenreProducts} title="recomendados " />
+          <Row products={sameGenreProducts} title="recomendados" />
     </div>
   );
 }

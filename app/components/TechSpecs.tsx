@@ -2,12 +2,13 @@ import { urlStoreIntl } from '@/constants/constant'
 import React from 'react'
 
 function TechSpecs({product}: {product: Product}) {
-   
+   console.log(product.colorCode)
   return (
     <div className="flex-1 mx-4">
         <div>
-        <p className='text-xs text-right'>colección <span className='uppercase'>{product.genre}</span></p>
-        <hr className='border-gris'/>
+        <p className={'text-xs text-right'}>colección <span className='uppercase'>{product.genre}</span></p>
+        {/*<hr className={`border-gris`}/>  hacer que la linea cambie al color si existe*/}
+        <hr className={`border-[${product.colorCode}]`}/>
     </div>
     <h1 className="text-bold  text-3xl sm:text-4xl uppercase mt-2 w-3/4">{product.title}</h1>
     

@@ -1,7 +1,8 @@
-"use client"
-import { useRef } from "react";
+"use client";
+import { useRef, useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Thumbnail from "./Thumbnail";
+import { useGlobalContext } from "../contexts/context";
 
 const Row = ({ products, title }) => {
   const rowRef = useRef(null);
@@ -19,11 +20,27 @@ const Row = ({ products, title }) => {
     }
   };
 
+  //products normal deberia ser digital, pero podes cambiarlo a físico
+ // necesita que le llegue isDigital por el contexto, es un booleano si/no
+ const {isDigital, setIsDigital} = useGlobalContext();
+
+
+ const filteredProducts = products.filter(
+  (product) => product.digital === isDigital
+  );
+console.log("userId: ", isDigital)
   return (
-    <div className="space-y-0.5 md:space-y-2 mx-2 w-full ">
-      <h2 className="w-full mt-6 cursor-pointer text-sm font-semibold text-gris transition duration-200 hover:text-gray-600 md:text-2xl ml-4">
-        {title}
-      </h2>
+    <div className="space-y-0.5 md:space-y-2 mx-2 w-full">
+      <div className="flex items-center ">
+        <h2 className="w-full mt-6 cursor-pointer text-sm font-semibold text-gris transition duration-200 hover:text-gray-600 md:text-2xl ml-4">
+          {title}
+        </h2>
+        <div className=" w-full mt-6 cursor-pointer">
+          
+       
+
+        </div>
+      </div>
 
       <div className="group relative md:ml-2">
         <BiChevronLeft
@@ -35,9 +52,12 @@ const Row = ({ products, title }) => {
           className="flex items-center space-x-0.5 scrollbar-hide overflow-x-scroll md:space-x-2.5 md:p-2"
           ref={rowRef}
         >
-          {products.map((product) => (product.imgFront &&
-            <Thumbnail key={product._id} product={product} />
-          ))}
+          {filteredProducts.map(
+            (product) =>
+              product.imgFront && (
+                <Thumbnail key={product._id} product={product} />
+              )
+          )}
         </div>
 
         <BiChevronRight

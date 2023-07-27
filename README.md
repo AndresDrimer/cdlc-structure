@@ -1,3 +1,5 @@
+https://csvjson.com/csv2json
+
 TODO FEATURES
 anonymous:
 search autocomplete (title and author)
@@ -90,3 +92,4 @@ Specify the document ID and provide the details of the permission, such as type,
       Circuitos de la economía urbana, 
       La Ciudad Patrimonial 
 
+Deberian poder ordenarse por fecha de publicacion, ese dato falta en la tabla!
