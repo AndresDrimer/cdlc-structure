@@ -10,7 +10,7 @@ import GridForCollectionsAndCombosMd  from "./GridForCollectionsAndCombosMd"
 
 //a lo que esta en hola debria llegarle un products filtrado con los elementos cuyo string codeDUX este includio en el array que le pasamos
 
-async function ProductDetail({ products, id }) {
+ function ProductDetail({ products, id }) {
   const { isDigital, setIsDigital } = useGlobalContext();
 
   //filter selected product
