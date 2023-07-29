@@ -1,10 +1,8 @@
 "use client"
-import { useState } from 'react'
 import { useGlobalContext } from '../contexts/context';
 
 function Toggler() {
-     //products normal deberia ser digital, pero podes cambiarlo a físico
-
+     //preset is digital, can be toggled to physical
      const {isDigital, setIsDigital} = useGlobalContext();
 
   return (

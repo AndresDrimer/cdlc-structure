@@ -17,6 +17,8 @@ interface Product {
     combo: boolean
     highlighted: boolean
     new: boolean
+    isColeccion: boolean
+    isCombo: boolean
     containsDUXCode: string | undefined
     contains: string | undefined
     stock: number | null
@@ -30,8 +32,9 @@ interface Product {
     z: number | null
     imgFront: string | undefined 
     imgBack: string | undefined
+    urlGoogleDoc: string
+    key: string
 }
-
 
 
 

@@ -4,6 +4,7 @@ TODO FEATURES
 anonymous:
 search autocomplete (title and author)
 collections and combos: special logic to show products contained and their content
+add a single ROiw for each coleccion
 
 user:
 auth, users db
@@ -20,11 +21,8 @@ https://www.npmjs.com/package/google-spreadsheet  sobre google-spreadsheet
 
 setup de la Api de Google en Node: https://developers.google.com/docs/api/quickstart/nodejs
 
-mi archivo: https://docs.google.com/document/d/1DPkc_l0eu9wECSH4mEqKbQrWbDtkh3kbao9S0eYNhX8/edit
-key: 1DPkc_l0eu9wECSH4mEqKbQrWbDtkh3kbao9S0eYNhX8
----
 
-esto trae un pdf: https://docs.google.com/feeds/download/documents/Export?exportFormat=pdf&format=pdf&id=<id>
+---
 
 un proyecto en react usando PDFLayout, un creador de PDFs: https://codesandbox.io/s/nextjs-pdf-ghd9v
 
@@ -74,24 +72,8 @@ Step 4: Add permission to the document
 Use the permissions.create method to add a permission for the document.
 Specify the document ID and provide the details of the permission, such as type, role, and email address.
 
-
-      "gris": "#b3b1b2",
-      "rojo": "#e40613",
-      "ciudades": "#23afb2",
-      "habitat": "#c33432",
-      "movilidad": "#d8aa06",
-      "territorio": "#ce050b",
-      "urbanidad": "#a8301f",
-
-      coleccion ciudades - NO, esto son digitales
-      La Ciudad Posible= cc620
-      Ciudades vividas, = CC023
-      Luces y sombras del urbanismo en Barcelona, =CC003
-      Ciudad, Comercio y Consumo 1, 
-      Ciudad, Comercio y Consumo 2, 
-      Circuitos de la economía urbana, 
-      La Ciudad Patrimonial 
-
+---------
+     
 Deberian poder ordenarse por fecha de publicacion, ese dato falta en la tabla!
 
 ///////////////////////////
@@ -140,3 +122,7 @@ export async function middleware(request: NextRequest, _next: NextFetchEvent) {
   }
   return res;
 }
+
+//////////////////
+about making an Index on MongoDb to use autocomplete feature on SearchBar:
+https://www.mongodb.com/docs/atlas/atlas-search/autocomplete/

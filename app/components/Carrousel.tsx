@@ -7,13 +7,13 @@ function Carrousel({ product }: { product: Product }) {
 
   return (
     <div>
-      <div className=" w-full mx-auto">
+      <div className="w-full mx-auto">
 
         {product.imgFront && product.imgBack && (
         <div className="relative">
           {/*  <BiChevronLeft
           className="absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-25 transition hover:scale-125 group-hover:opacity-100" onClick={()=>setImgSource(prev=>!prev)}/> */}
-        <img src={imgSource? product.imgFront : product.imgBack} width={800} height={800} onClick={()=>setImgSource(prev=>!prev)} alt="book cover"/>
+        <img src={imgSource? product.imgFront : product.imgBack} width={800} height={800} onClick={()=>setImgSource(prev=>!prev)} alt="book cover" className="cursor-pointer"/>
         {/* <BiChevronRight
           className="absolute top-0 bottom-0 right-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-25 transition hover:scale-125 group-hover:opacity-100"
           onClick={()=>setImgSource(prev=>!prev)}

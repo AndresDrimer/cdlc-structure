@@ -1,8 +1,8 @@
 'use client';
 import { createContext, useContext, Dispatch, SetStateAction, useState } from "react";
-///////////////////////
+////////////////////
 ////TYPESCRIPT//////
-//////////////////////
+////////////////////
 type DataType = {
     firstName: string
 }
@@ -20,8 +20,8 @@ const GlobalContext = createContext<ContextProps>({
     setIsDigital: (): string => ''
    
 })
-//////////////////////////////
-////Provider//////////////////
+////////////////////////////
+////Provider////////////////
 ////////////////////////////
 
 export const GlobalContextProvider = ({ children }: any) => {

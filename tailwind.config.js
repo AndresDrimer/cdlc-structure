@@ -17,7 +17,7 @@ module.exports = {
         "gris": "#b3b1b2",
         "rojo": "#e40613",
         "ciudades": "#23afb2",
-        "habitat": "#c33432",
+        "hábitat": "#c33432",
         "movilidad": "#d8aa06",
         "territorio": "#ce050b",
         "urbanidad": "#a8301f",
