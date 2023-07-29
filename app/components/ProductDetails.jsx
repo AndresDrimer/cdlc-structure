@@ -4,6 +4,9 @@ import TechSpecs from "./TechSpecs";
 import { useGlobalContext } from "../contexts/context";
 import TechSpecsCollection from "./TechSpecsCollection";
 import Carrousel from "./Carrousel";
+import TechSpecsCollectionMd from "./TechSpecsCollectionMd";
+import GridForCollectionsAndCombosMd  from "./GridForCollectionsAndCombosMd"
+
 
 //a lo que esta en hola debria llegarle un products filtrado con los elementos cuyo string codeDUX este includio en el array que le pasamos
 
@@ -47,12 +50,24 @@ async function ProductDetail({ products, id }) {
       </div>
 
       {/*medium devices and above*/}
+      {/*mejorar desde linea 60, componente TechSpecsCollectionMd*/}
       <div className="hidden md:block">
         <div className="flex mx-auto">
           <div className="hidden md:inline-block w-3/5">
             <ImageCollage product={product} />
           </div>
+
+          {product.isColeccion === false && product.isCombo === false ? (
           <TechSpecs product={product} />
+        ) : (  <div>  
+          <TechSpecsCollectionMd
+            filteredSameGenreProducts={filteredSameGenreProducts}
+            product={product}
+            comboProducts={comboProducts}
+          />
+          </div>
+        )}
+
         </div>
       </div>
 
@@ -73,6 +88,14 @@ async function ProductDetail({ products, id }) {
           </div>
         </div>
       )}
+
+
+      <div className="hidden md:block">
+      <GridForCollectionsAndCombosMd 
+          filteredSameGenreProducts={filteredSameGenreProducts}
+          comboProducts={comboProducts} 
+          product={product}/>
+          </div>
     </section>
   );
 }
