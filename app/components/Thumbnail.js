@@ -15,6 +15,8 @@ const Thumbnail = ({ product }) => {
       src={product.imgFront}
         className="rounded-sm md:rounded relative "
         alt="imagen de tapa"
+        width={200}
+        height={200}
     />
 
     {product.discountPercentage !==0 && (<div className="font-xs px-2 bg-gris text-rojo absolute top-0 right-0 shadow-sm hover:text-white">  {product.discountPercentage}% off </div>) } 

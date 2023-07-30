@@ -30,7 +30,7 @@ interface Product {
     x: number | null
     y: number | null
     z: number | null
-    imgFront: string | undefined 
+    imgFront: string  
     imgBack: string | undefined
     urlGoogleDoc: string
     key: string
