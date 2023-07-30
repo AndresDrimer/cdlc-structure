@@ -17,7 +17,7 @@ const Thumbnail = ({ product }) => {
         alt="imagen de tapa"
         width={200}
         height={200}
-        layout={fill}
+        fill
     />
     
 
