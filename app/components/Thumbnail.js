@@ -11,13 +11,12 @@ const Thumbnail = ({ product }) => {
       href={`/${product._id}`}
       className={`relative  min-w-[180px] cursor-pointer transition duration-200 ease-out h-70 md:h-70 md:min-w-[260px] md:hover:scale-105`}
     >
-      <Image
+      <img
       src={product.imgFront}
         className="rounded-sm md:rounded relative "
         alt="imagen de tapa"
         width={200}
         height={200}
-        fill
     />
     
 
