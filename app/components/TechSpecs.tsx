@@ -29,10 +29,6 @@ function TechSpecs({ product }: { product: Product }) {
         <h1 className="text-sm w-3/4 mt-2">de {product.author}</h1>
       )}
 
-   
-
-      {/*ficha tecnica */}
-
       {/* boton de link a TiendaNube para comprar*/}
       <BotonComprar product={product} />
       

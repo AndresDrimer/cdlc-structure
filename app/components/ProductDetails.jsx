@@ -17,7 +17,7 @@ import GridForCollectionsAndCombosMd  from "./GridForCollectionsAndCombosMd"
   const [product] = products.filter((it) => it._id === id);
 
   //filter same genre
-  const sameGenreProducts = products.filter((it) => it.genre === product.genre);
+  const sameGenreProducts = products.filter((it) => it.genre === product.genre && it._id!==id);
 
   //filter products with codeDUX included in containsDUX code
   const comboContains = product.containsDUXCode;
@@ -50,7 +50,7 @@ import GridForCollectionsAndCombosMd  from "./GridForCollectionsAndCombosMd"
       </div>
 
       {/*medium devices and above*/}
-      {/*mejorar desde linea 60, componente TechSpecsCollectionMd*/}
+    
       <div className="hidden md:block">
         <div className="flex mx-auto">
           <div className="hidden md:inline-block w-3/5">

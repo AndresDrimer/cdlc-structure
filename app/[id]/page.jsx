@@ -38,7 +38,7 @@ const id = params.id
       { !product.isCombo && !product.isColeccion && product.genre!=="no-genre"|"ensayos"|"barrios"|"planeamiento" &&
          <Row products={sameGenreProducts} title="de la misma colección" />
       }
-   
+      
   {/*Row de Productos destacados */}
        { product.isCombo || product.isColeccion || product.genre==="no-genre"|"ensayos"|"barrios"|"planeamiento" && 
          <Row products={comboAndColeccionProducts} title="combos & colecciones" />

@@ -28,7 +28,7 @@ export default async function Home() {
         Página estática para usuario Anónimo
       </h1>
 
-      <section className="flex flex-col justify-between mx-10">
+      <section className="flex flex-col justify-between mx-auto w-3/4 md:w-1/2 items-center">
         <Toggler className="item-end" />
         <SearchBar products={products} />{/*Buscador por titulo con filtro, dirige a prod por Id, FORM con server action */}
       </section>

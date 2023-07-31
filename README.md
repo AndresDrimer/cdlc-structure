@@ -3,8 +3,8 @@ https://csvjson.com/csv2json
 TODO FEATURES
 anonymous:
 search autocomplete (title and author)
-collections and combos: special logic to show products contained and their content
-add a single ROiw for each coleccion
+UI responsive adjustments
+
 
 user:
 auth, users db

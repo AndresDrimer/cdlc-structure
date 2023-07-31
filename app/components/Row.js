@@ -62,5 +62,4 @@ const Row = ({ products, title }) => {
     </div>
   );
 };
-
 export default Row;
