@@ -11,10 +11,17 @@ export default async function page() {
     <BackButtonAdmin />
       <h1 className="text-center font-bold text-3xl mt-4">Lista completa de Productos</h1>
       <h3 className="text-center">contiene {products.length} unidades</h3>
-      <div>
+
+      <div className="">
         {products.map((it) => (
-          <div key={it._id} className="border-2 mt-4">
-            <ul className="w-5/6 ml-6">
+          <div key={it._id} className="border-2 mt-4 mx-4 px-2">
+            <img src={it.imgFront} />
+            <div>
+            <h2 className="font-bold text-2xl uppercase">{it.title}</h2>
+            <p>se muestra en la tienda? {it.show ? "sí" :" no"}</p>
+            <br />
+            <p>Product details</p>
+            <ul className="w-5/6 ml-6 text-xs pb-4">
               <li><span className="font-bold">_id:</span> {it._id} </li>
               <li><span className="font-bold">codeDUX:</span> {it.codeDUX} </li>
               <li><span className="font-bold">ISBN:</span> {it.ISBN}</li>
@@ -51,6 +58,7 @@ export default async function page() {
               <li><span className="font-bold">urlGoogleDoc:</span> {it.urlGoogleDoc}</li>
               <li><span className="font-bold">key: </span>{it.key}</li>
             </ul>
+            </div>
           </div>
         ))}
       </div>
