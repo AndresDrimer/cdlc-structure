@@ -18,6 +18,7 @@ const id = params.id
 
   return (
     <div className="">
+    
       <div className="">
         <Link href="/">
           <button className="flex items-center ml-4 cursor-pointer text-gray-500 hover:text-black mt-2 text-xs"> 

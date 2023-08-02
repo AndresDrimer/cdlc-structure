@@ -3,7 +3,7 @@ import Toggler from "./components/Toggler";
 import { getAllProducts } from "../lib/mongo/products";
 import SearchBar from "./components/SearchBar";
 
-export const dynamic = "force-dynamic" ; //content is all cached as much as possible
+export const dynamic = "auto"; //content is all cached as much as possible
 
 export default async function Home() {
 

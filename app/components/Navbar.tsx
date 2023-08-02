@@ -21,20 +21,20 @@ function Navbar() {
           />
         </Link>
       </div>
-      <div className="flex space-x-4 2xl:mx-20 2xl:space-x-8">
+      <div className="flex space-x-4 2xl:mx-20 2xl:space-x-8 items-center">
         <div className="md:hidden">
           <RxAvatar />
         </div>
         <div>
           <Image
             src={argentinaLogo}
-            width={12}
-            height={12}
+            width={20}
+            height={20}
             alt="location logo"
           />
         </div>
         <div className="">
-          <RiSettings3Fill className="text-gris scale-110" />
+          <RiSettings3Fill className="text-gris w-6 h-6" />
         </div>
 
         <div className="hidden md:flex uppercase">
