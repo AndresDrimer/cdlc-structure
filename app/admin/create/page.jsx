@@ -1,147 +1,163 @@
 import BackButtonAdmin from "@/app/components/BackButtonAdmin";
 import { createProduct } from "@/lib/mongo/products";
+import { addProduct } from "@/app/actions/serverActions"
+import { getAllProducts } from "@/lib/mongo/products";
+import BotonCrearNvoProducto from "@/app/components/BotonCrearNvoProducto"
+import ToggleCrear from "@/app/components/ToggleCrear"
 
 
-function page() {
+export const dynamic = "force-dynamic";
 
-const addProduct = async (e) => {
-"use server"
-const codeDUX = e.get("codeDUX").toString()
+async function  page() {
+const {products} = await getAllProducts()
 
-const newProduct= {
-  codeDUX,
-};
-if (!codeDUX) return;
-createProduct(codeDUX)
-console.log("done")
+const genresRaw = await (products.map(it=> it.genre)).filter(it=>it !== null )
+const genresClean = [...new Set(genresRaw)]
 
-}
+
+
+
   return (
     <div>
     <BackButtonAdmin />
       <h1 className="text-center font-bold text-3xl mt-4">
         Create New Product
       </h1>
-
-      <div className="flex justify-center mt-4 ">
-        <form action={addProduct} className="flex flex-col items-start space-y-4 ">
+   
+      <div className="mt-4 w-full px-2">
+        <form action={ addProduct } className="flex flex-col items-start space-y-2 w-[90vw] mx-auto">
           <label>
             codeDux:
             <input type="text" name="codeDUX" className="inputField" />
           </label>
           <label>
-            ISBN: <input type="text" name="isbn" className="inputField" />
+            ISBN: <input type="text" name="ISBN" className="inputField" />
           </label>
           <label>
-            genre: <input type="text" name="genre" className="inputField" />
+            genero: <select> {genresClean.map(it=>  <option value={it} key={it}>{it}</option> )} </select>
           </label>
           <label>
-            title: <input type="text" name="title" className="inputField" />
+            título: <input type="text" name="title" className="inputField" />
           </label>
           <label>
-            author: <input type="text" name="author" className="inputField" />
+            autor/es: <input type="text" name="author" className="inputField" />
           </label>
           <label>
-            urlIntl: <input type="text" name="urlIntl" className="inputField" />
+            url Internacional: <input type="text" name="urlIntl" className="inputField" />
           </label>
           <label>
-            urlLocal: <input type="text" name="urlLocal" className="inputField" />
+            url Local: <input type="text" name="urlLocal" className="inputField" />
           </label>
           <label>
-            colorCode: <input type="text" name="colorCode" className="inputField" />
+            código de color: <input type="text" name="colorCode" className="inputField" placeholder="#xxxxxx" />
           </label>
           <label>
-            techSpecs: <input type="text" name="techSpecs" className="inputField" />
+            techSpecs: <textarea type="text" name="techSpecs" className="inputField" />
           </label>
           <label>
-            authorSpecs: <input type="text" name="authorSpecs" className="inputField" />
+            authorSpecs: <textarea type="text" name="authorSpecs" className="inputField" />
           </label>
           <label>
-            review: <input type="text" name="review" className="inputField" />
+            review: <textarea type="text" name="review" className="inputField" />
+          </label>
+          <div className=" grid grid-cols-2 mx-auto w-full ">
+
+   
+
+          <ToggleCrear />
+          <label className="flex items-center ">
+            agotado?: <input type="checkbox" name="deprecated"  className="inputField scale-50" />
+          </label>
+
+          <label className="flex items-center">
+            se muestra?: <input type="checkbox" name="show" className="inputField scale-50" />
+          </label>
+          
+          <label className="flex items-center">
+            es digital?: <input type="checkbox" name="digital" className="inputField scale-50"/>
+          </label>
+          <label className="flex items-center">
+            es combo?: <input type="checkbox" name="combo" className="inputField scale-50" />
+          </label>
+         
+          <label className="flex items-center">
+            destacado: <input type="checkbox" name="highlighted" className="inputField scale-50" />
+          </label>
+          <label className="flex items-center">
+            es nuevo?: <input type="checkbox" name="new_" className="inputField scale-50" />
+          </label>
+         
+          <label className="flex items-center">
+            es una colección?: <input type="checkbox" name="isColeccion" className="inputField scale-50" />
+          </label>
+          <label className="flex items-center">
+            es un combo?: <input type="checkbox" name="isCombo" className="inputField scale-50" />
+          </label>
+          </div>
+        
+          <label>
+            Si es una colección, qué códigos DUX contiene?: <input type="text" name="containsDUXCode" className="inputField" placeholder={`["cc255", "cc152"]`} />
           </label>
           <label>
-            deprecated: <input type="checkbox" name="deprecated" className="inputField" />
+          Si es una colección, qué títulos contiene?:
+            <input type="text" name="contains" className="inputField" placeholder="esto no se usa"/>
           </label>
           <label>
-            show: <input type="checkbox" name="show" className="inputField" />
+            stock: <input type="number" name="stock" className="inputField" placeholder="0"/>
           </label>
           <label>
-            digital: <input type="checkbox" name="digital" className="inputField" />
-          </label>
-          <label>
-            combo: <input type="checkbox" name="combo" className="inputField" />
-          </label>
-          <label>
-            highlighted: <input type="checkbox" name="highlighted" className="inputField" />
-          </label>
-          <label>
-            new: <input type="checkbox" name="new_" className="inputField" />
-          </label>
-          <label>
-            isColeccion: <input type="checkbox" name="isColeccion" className="inputField" />
-          </label>
-          <label>
-            isCombo: <input type="checkbox" name="isCombo" className="inputField" />
-          </label>
-          <label>
-            containsDUXCode: <input type="text" name="containsDUXCode" className="inputField" />
-          </label>
-          <label>
-            contains:
-            <input type="text" name="contains" className="inputField" />
-          </label>
-          <label>
-            stock: <input type="number" name="stock" className="inputField" />
-          </label>
-          <label>
-            discountPercentage:
+            qué porcentaje de descuento aplica?:
             <input
               type="number"
               name="discountPercentage"
               className="inputField"
+              placeholder="0"
+              
+    
             />
           </label>
           <label>
-            priceTN:
-            <input type="number" name="priceTN" className="inputField" />
+            precio ARG:
+            <input type="number" name="priceTN" className="inputField" placeholder="0" step="0.01"/>
           </label>
           <label>
-            priceML:
-            <input type="number" name="priceML" className="inputField" />
+            precio MERCADOLIBRE:
+            <input type="number" name="priceML" className="inputField" placeholder="0" step="0.01" />
           </label>
           <label>
-            priceUS:
-            <input type="number" name="priceUS" className="inputField" />
+            precio U$S:
+            <input type="number" name="priceUS" className="inputField" placeholder="0" step="0.01"/>
           </label>
           <label>
-            kg: <input type="number" name="kg" className="inputField" />
+            peso: <input type="number" name="kg" className="inputField" placeholder="0" step="0.001"/>
           </label>
           <label>
-            x: <input type="number" name="x" className="inputField" />
+            x: <input type="number" name="x" className="inputField"placeholder="0" />
           </label>
           <label>
-            y: <input type="number" name="y" className="inputField" />
+            y: <input type="number" name="y" className="inputField" placeholder="0"/>
           </label>
           <label>
-            z: <input type="number" name="z" className="inputField" />
+            z: <input type="number" name="z" className="inputField" placeholder="0"/>
           </label>
           <label>
-            imgFront:
-            <input type="text" name="imgFront" className="inputField" />
+            imagen front:
+            <input type="text" name="imgFront" className="inputField" placeholder="pegar sólo ID aqui (cadena de 27 caracteres)"/>
           </label>
           <label>
           
-            imgBack: <input type="text" name="imgBack" className="inputField" />
+            imagen back: <input type="text" name="imgBack" className="inputField" placeholder="pegar sólo ID aqui (cadena de 27 caracteres)"/>
           </label>
           <label>
-            urlGoogleDoc:
+            link GoogleDocs:
             <input type="text" name="urlGoogleDoc" className="inputField" />
           </label>
           <label>
-            key: <input type="text" name="key" className="inputField" />
+            clave: <input type="text" name="key" className="inputField" />
           </label>
-
-          <button className="button">send</button>
+<div className="w-full flex justify-center py-4">
+<BotonCrearNvoProducto />
+          <button className="button" >CREAR NUEVO PRODUCTO</button></div>
         </form>
       </div>
     </div>

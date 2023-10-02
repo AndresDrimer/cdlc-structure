@@ -13,16 +13,16 @@ function Carrousel({ product }: { product: Product }) {
         <div className="relative">
           {/*  <BiChevronLeft
           className="absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-25 transition hover:scale-125 group-hover:opacity-100" onClick={()=>setImgSource(prev=>!prev)}/> */}
-        <img src={imgSource? product.imgFront : product.imgBack} width={800} height={800} onClick={()=>setImgSource(prev=>!prev)} alt="book cover" className="cursor-pointer"/>
+        <img src={imgSource? product.imgFront : product.imgBack} width={800} height={800} onClick={()=>setImgSource(prev=>!prev)} alt="portada" className="cursor-pointer"/>
         {/* <BiChevronRight
           className="absolute top-0 bottom-0 right-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-25 transition hover:scale-125 group-hover:opacity-100"
           onClick={()=>setImgSource(prev=>!prev)}
         /> */}
         </div> )}
 
-        {!product.imgBack && <img src={product.imgFront} width={800} height={800} alt="book cover" />}
+        {!product.imgBack && <img src={product.imgFront} width={800} height={800} alt="portada" />}
 
-        {!product.imgFront && <img src={product.imgBack} width={800} height={800} alt="book cover" />}
+        {!product.imgFront && <img src={product.imgBack} width={800} height={800} alt="portada" />}
       </div>
     </div>
   );

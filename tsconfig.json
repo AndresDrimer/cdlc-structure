@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/page.jsx", "app/components/CarrouselCollection.tsx", "app/admin/list/page.jsx", "app/admin/create/page.jsx", "app/actions/serverActions.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/page.jsx", "app/components/CarrouselCollection.tsx", "app/admin/list/page.jsx", "app/admin/createProduct/page.jsx", "app/actions/serverActions.js", "app/admin/list/layout.jsx", "app/contexts/adminContext.tsx"],
   "exclude": ["node_modules"]
 }

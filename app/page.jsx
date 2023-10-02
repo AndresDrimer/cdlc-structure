@@ -3,7 +3,8 @@ import Toggler from "./components/Toggler";
 import { getAllProducts } from "../lib/mongo/products";
 import SearchBar from "./components/SearchBar";
 
-export const dynamic = "auto"; //content is all cached as much as possible
+
+ export const dynamic = "auto"; //content is all cached as much as possible
 
 export default async function Home() {
 
@@ -31,7 +32,8 @@ export default async function Home() {
       <section className="flex flex-col justify-between mx-auto w-3/4 md:w-1/2 items-center">
         <Toggler className="item-end" />
         <SearchBar products={products} />{/*Buscador por titulo con filtro, dirige a prod por Id, FORM con server action */}
-      </section>
+   
+        </section>
 
 
       {/* Row de TODOS los productos*/}

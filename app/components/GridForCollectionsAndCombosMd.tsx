@@ -22,7 +22,7 @@ function GridForCollectionsAndCombosMd({filteredSameGenreProducts,comboProducts,
                   src={it.imgFront}
                   width={150}
                   height={150}
-                  alt="tapa de libro"
+                  alt="portada"
                   className="hover:scale-110"
                 />
                 <div>
@@ -56,7 +56,7 @@ function GridForCollectionsAndCombosMd({filteredSameGenreProducts,comboProducts,
                   src={it.imgFront}
                   width={150}
                   height={150}
-                  alt="tapa de libro"
+                  alt="portada"
                   className="hover:scale-110"
                 />
                 <div>

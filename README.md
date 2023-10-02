@@ -1,10 +1,16 @@
+ESTOY PENSANDO.
+La page y layout es SRR, alli hago las peticiones. En Layout enlazo los context (client), que envuelven a la page
+La page esta rellena de componentes client, que se filtran por variables que trae el context
+En las page se hacen los action, CRUD que sale SSR.
+Lo que tiene que ver con filtrar la UI es client, lo que es traer data es SSR, ya que traido de este modo se carag la primera vez del todo (incluido todo el HTML), eso mejora mucha el SEO; ademas es mas rapido, son las dos razones.
+
 https://csvjson.com/csv2json
 
 TODO FEATURES
 anonymous:
 search autocomplete (title and author)
 UI responsive adjustments
-
+IP auto-detect
 
 user:
 auth, users db
@@ -16,6 +22,10 @@ crud products - new layout
 
 --------
 
+
+CRUD SERVER ACTIONS reference: https://www.youtube.com/watch?v=q5smE9Rywts&t=580s
+
+------------------
 USEFULL LINKS DURING PROCESS
 https://www.npmjs.com/package/google-spreadsheet  sobre google-spreadsheet
 

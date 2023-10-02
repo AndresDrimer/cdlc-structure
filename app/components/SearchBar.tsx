@@ -10,12 +10,26 @@ function SearchBar({ products }: { products: Product[] }) {
 
   function handleSearch(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const productSelected = products.filter(
+     const productSelected = products.filter(
       (product) => product.title === termSearched
-    ); //this returns an array, that´s way i call it [0] on next line 
-    router.push(`/${productSelected[0]._id}`); 
-    setTermSearched("")
+    ); //this returns an array, that´s why i call it [0] on next line 
+      if(!productSelected) {
+        console.log("libro no existe")
+        setTermSearched("")
+        return;
+      }
+
+    if(productSelected && productSelected[0]?._id){  
+    router.push(`/${productSelected[0]._id}`);
+    
   }
+  console.log("ese titulo esta mal escrito")
+  setTermSearched("")
+   return;
+  }
+
+
+  
   return (
     <div className="border-2 w-full">
       <form onSubmit={handleSearch}>

@@ -14,7 +14,7 @@ const Thumbnail = ({ product }) => {
       <img
       src={product.imgFront}
         className="rounded-sm md:rounded relative "
-        alt="imagen de tapa"
+        alt="portada"
         width={400}
         height={400}
     />
